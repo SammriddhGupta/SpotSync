@@ -19,16 +19,16 @@
         "dest": "/api/server.js"
       },
       {
-        "src": "/(.*)",
-        "dest": "/index.html"
+        "src": "/(.*\\.(js|css|png|jpg|ico|svg|webmanifest))",
+        "dest": "/$1"
       },
       {
         "src": "/site\\.webmanifest",
         "dest": "/site.webmanifest"
       },
       {
-        "src": "/(.*\\.(js|css|png|jpg|ico|svg|webmanifest))",
-        "dest": "/$1"
+        "src": "/(.*)",
+        "dest": "/index.html"
       }
     ]
   }
