@@ -31,7 +31,7 @@ function Event() {
     setInputValue("");
     setNameCompleted(true); // Clear input after submission
 
-    localStorage.setItem(`rendezwho_user_${uniqueLink}`, userName);
+    localStorage.setItem(`spotsync_user_${uniqueLink}`, userName);
   };
 
   const handleInputChange = (e) => {
@@ -57,7 +57,7 @@ function Event() {
     fetchEventData();
 
     // Check if the user has already signed in for this event
-    const savedUsername = localStorage.getItem(`rendezwho_user_${uniqueLink}`);
+    const savedUsername = localStorage.getItem(`spotsync_user_${uniqueLink}`);
     if (savedUsername) {
       setCurrentUser(savedUsername);
       setNameCompleted(true);
@@ -114,7 +114,7 @@ function Event() {
                     className="text-xs text-violet-500 underline hover:text-violet-700"
                     onClick={() => {
                       setNameCompleted(false);
-                      localStorage.removeItem(`rendezwho_user_${uniqueLink}`);
+                      localStorage.removeItem(`spotsync_user_${uniqueLink}`);
                     }}
                   >
                     Change
