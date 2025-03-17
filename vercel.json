@@ -19,12 +19,8 @@
         "dest": "/api/server.js"
       },
       {
-        "src": "/(.*\\.\\w+$)",
-        "dest": "/$1"
-      },
-      {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/frontend/$1"
       }
     ]
   }
