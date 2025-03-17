@@ -47,12 +47,12 @@ All in all, we do think this is a very useful app and will make a lot of people'
 
 ### Demo Screenshots
 
-![Home](./src/assets/Home.png)
+![Home](./frontend/src/assets/Home.png)
 
-![Event Page](./src/assets/Event-With-Times.png)
-![Poll](./src/assets/Poll.png)
-![Check](./src/assets/Check.png)
-![Confirm](./src/assets/Confirm.png)
+![Event Page](./frontend/src/assets/Event-With-Times.png)
+![Poll](./frontend/src/assets/Poll.png)
+![Check](./frontend/src/assets/Check.png)
+![Confirm](./frontend/src/assets/Confirm.png)
 
 
 #### Requirements
