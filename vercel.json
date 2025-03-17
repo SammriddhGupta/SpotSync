@@ -25,6 +25,10 @@
       {
         "src": "/site\\.webmanifest",
         "dest": "/site.webmanifest"
+      },
+      {
+        "src": "/(.*\\.(js|css|png|jpg|ico|svg|webmanifest))",
+        "dest": "/$1"
       }
     ]
   }
