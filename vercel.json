@@ -19,13 +19,13 @@
         "dest": "/api/server.js"
       },
       {
-        "src": "/[^.]+$",
-        "dest": "/index.html",
-        "status": 200
+        "src": "/(.*)",
+        "dest": "/frontend/dist/$1",
+        "continue": true
       },
       {
         "src": "/(.*)",
-        "dest": "/$1"
+        "dest": "/frontend/dist/index.html"
       }
     ]
   }
