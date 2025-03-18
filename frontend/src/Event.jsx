@@ -40,7 +40,7 @@ function Event() {
 
   const fetchEventData = async () => {
     try {
-      const response = await fetch(`/api/events/${uniqueLink}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/events/${uniqueLink}`);
       const data = await response.json();
       setEventData(data);
 

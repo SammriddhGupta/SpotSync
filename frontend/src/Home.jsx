@@ -47,7 +47,7 @@ function Home() {
       };
 
       // Send a POST request to your backend API
-      const response = await fetch("/api/events", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(eventData),

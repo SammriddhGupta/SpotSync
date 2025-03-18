@@ -29,7 +29,7 @@ function CombinedAvailability({ eventId }) {
       setLoading(true);
       try {
         const response = await fetch(
-          `/api/events/${eventId}/combined-availability`
+          `${import.meta.env.VITE_API_URL}/events/${eventId}/combined-availability`
         );
 
         if (!response.ok) {
