@@ -7,18 +7,39 @@ const app = express();
 app.use(express.json());
 
 const allowedOrigins = [
-  'https://spotsync-backend.vercel.app',
-  'https://spotsync-backend-sammriddhguptas-projects.vercel.app',
-  'https://spotsync-backend-git-main-sammriddhguptas-projects.vercel.app',
+  'https://spotsync-frontend.vercel.app',
+  'https://spotsync-frontend-sammriddhguptas-projects.vercel.app/',
+  'https://spotsync-frontend-git-main-sammriddhguptas-projects.vercel.app/',
   'http://localhost:5173',
-  'https://spotsync-frontend.vercel.app'
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function(origin, callback) {
+    console.log('Request from origin:', origin);
+    if (!origin || allowedOrigins.includes(origin)) {
+      console.log('Origin allowed:', origin);
+      callback(null, true);
+    } else {
+      console.log('Origin rejected:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 }));
+
+app.use((req, res, next) => {
+  console.log('Incoming request:', {
+    method: req.method,
+    path: req.path,
+    origin: req.headers.origin
+  });
+  next();
+});
+
+app.get('/test', (req, res) => {
+  res.json({ message: 'Server is working!' });
+});
 
 app.post('/api/events', async (req, res) => {
   try {
@@ -300,5 +321,10 @@ app.get('/api/events/:id/combined-availability', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`API Server is running on port ${PORT}`);
 }); */
+
+app.use((err, req, res, next) => {
+  console.error('Error:', err);
+  res.status(500).json({ error: err.message });
+});
 
 export default app;
