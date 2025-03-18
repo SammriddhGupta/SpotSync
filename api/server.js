@@ -5,7 +5,19 @@ import { db } from './firebaseConfig.js';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const allowedOrigins = [
+  'https://spotsync-backend.vercel.app/',
+  'https://spotsync-backend-sammriddhguptas-projects.vercel.app/',
+  'https://spotsync-backend-git-main-sammriddhguptas-projects.vercel.app/',
+  'http://localhost:5173'
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+}));
 
 app.post('/api/events', async (req, res) => {
   try {
