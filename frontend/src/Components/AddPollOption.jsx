@@ -24,7 +24,7 @@ const AddPollOption = ({ eventId, selectedLocation, onOptionAdded }) => {
       };
 
       console.log("Sending poll option for eventId:", eventId, locationData);
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/events/${eventId}/poll-options`, {
+      const response = await fetch(`https://spotsync-backend.vercel.app/events/${eventId}/poll-options`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(locationData),

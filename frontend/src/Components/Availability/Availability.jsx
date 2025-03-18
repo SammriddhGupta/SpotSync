@@ -150,7 +150,7 @@ function Availability({ eventId, username }) {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/events/${uniqueLink}`);
+        const response = await fetch(`https://spotsync-backend.vercel.app/events/${uniqueLink}`);
         if (!response.ok) {
           throw new Error("Event not found");
         }
@@ -188,7 +188,7 @@ function Availability({ eventId, username }) {
 
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/events/${eventId}/availability/${username}`
+          `https://spotsync-backend.vercel.app/events/${eventId}/availability/${username}`
         );
 
         if (response.ok) {
@@ -248,7 +248,7 @@ function Availability({ eventId, username }) {
     setSavingStatus("Saving...");
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/events/${eventId}/availability`, {
+      const response = await fetch(`https://spotsync-backend.vercel.app/events/${eventId}/availability`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
