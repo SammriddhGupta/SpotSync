@@ -7,10 +7,11 @@ const app = express();
 app.use(express.json());
 
 const allowedOrigins = [
-  'https://spotsync-backend.vercel.app/',
-  'https://spotsync-backend-sammriddhguptas-projects.vercel.app/',
-  'https://spotsync-backend-git-main-sammriddhguptas-projects.vercel.app/',
-  'http://localhost:5173'
+  'https://spotsync-backend.vercel.app',
+  'https://spotsync-backend-sammriddhguptas-projects.vercel.app',
+  'https://spotsync-backend-git-main-sammriddhguptas-projects.vercel.app',
+  'http://localhost:5173',
+  'https://spotsync-frontend.vercel.app'
 ];
 
 app.use(cors({
