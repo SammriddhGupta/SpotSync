@@ -34,11 +34,14 @@ export default function VotingBar({ options = [], eventId }) {
     setPollOptions(updatedOptions);
 
     try {
-      await fetch(`https://spotsync-backend.vercel.app/events/${eventId}/vote`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ locationName: name }), // Send name instead of index
-      });
+      await fetch(
+        `https://spotsync-backend.vercel.app/api/events/${eventId}/vote`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ locationName: name }), // Send name instead of index
+        }
+      );
     } catch (error) {
       console.error("Error voting:", error);
     }

@@ -24,11 +24,14 @@ const AddPollOption = ({ eventId, selectedLocation, onOptionAdded }) => {
       };
 
       console.log("Sending poll option for eventId:", eventId, locationData);
-      const response = await fetch(`https://spotsync-backend.vercel.app/events/${eventId}/poll-options`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(locationData),
-      });
+      const response = await fetch(
+        `https://spotsync-backend.vercel.app/api/events/${eventId}/poll-options`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(locationData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add poll option");

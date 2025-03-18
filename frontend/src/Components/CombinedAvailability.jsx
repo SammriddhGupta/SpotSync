@@ -29,7 +29,7 @@ function CombinedAvailability({ eventId }) {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://spotsync-backend.vercel.app/events/${eventId}/combined-availability`
+          `https://spotsync-backend.vercel.app/api/events/${eventId}/combined-availability`
         );
 
         if (!response.ok) {

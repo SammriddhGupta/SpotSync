@@ -40,7 +40,9 @@ function Event() {
 
   const fetchEventData = async () => {
     try {
-      const response = await fetch(`https://spotsync-backend.vercel.app/events/${uniqueLink}`);
+      const response = await fetch(
+        `https://spotsync-backend.vercel.app/api/events/${uniqueLink}`
+      );
       const data = await response.json();
       setEventData(data);
 

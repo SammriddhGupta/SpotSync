@@ -47,11 +47,14 @@ function Home() {
       };
 
       // Send a POST request to your backend API
-      const response = await fetch(`https://spotsync-backend.vercel.app/events`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(eventData),
-      });
+      const response = await fetch(
+        `https://spotsync-backend.vercel.app/api/events`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(eventData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to create event");
