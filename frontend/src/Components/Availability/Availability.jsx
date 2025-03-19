@@ -120,7 +120,7 @@ function Availability({ eventId, username }) {
     while (currentDate <= lastDate) {
       // Format the date as 'YYYY-MM-DD'
       const dateString = currentDate.toISOString().split("T")[0]; // e.g., "2025-03-16"
-      console.log("Current Date:", currentDate.toISOString());
+      // console.log("Current Date:", currentDate.toISOString());
 
       // Add the formatted date to the dictionary with the appropriate intervals
       dateDict[dateString] = Array(
