@@ -160,9 +160,8 @@ function Event() {
               </div>
             </div>
           </div>
-          {/* CombinedAvailability section - add this below the calendar */}
           {nameCompleted && (
-            <div className="w-[50] mt-8">
+            <div className="w-[30%] mt-8">
               <h3 className="text-xl font-semibold mb-4">Best Meeting Times</h3>
               <CombinedAvailability eventId={uniqueLink} />
             </div>
