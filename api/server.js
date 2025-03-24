@@ -317,10 +317,10 @@ app.get('/api/events/:id/combined-availability', async (req, res) => {
 });
 
 // Start the Express server
-/* const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`API Server is running on port ${PORT}`);
-}); */
+});
 
 app.use((err, req, res, next) => {
   console.error('Error:', err);

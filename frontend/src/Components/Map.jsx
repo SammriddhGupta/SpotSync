@@ -31,7 +31,7 @@ const MapComponent = ({ onLocationSelect }) => {
   ];
 
   const searchEventHandler = (result) => {
-    console.log("Search result:", result);
+    // console.log("Search result:", result);
 
     const locationData = {
       display_name: result.label,
@@ -40,12 +40,6 @@ const MapComponent = ({ onLocationSelect }) => {
       y: result.y,
       bounds: result.bounds,
     };
-    console.log("Selected location:", locationData);
-    console.log("Selected display name:", locationData.display_name);
-    console.log("Selected name:", locationData.name);
-    console.log("Selected x:", locationData.x);
-    console.log("Selected y:", locationData.y);
-    console.log("Selected bounds:", locationData.bounds);
     
     setSelectedLocation(locationData);
     setMarkerPosition([result.y, result.x]);

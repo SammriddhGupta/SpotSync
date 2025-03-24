@@ -113,9 +113,6 @@ function Availability({ eventId, username }) {
     let currentDate = new Date(startDate);
     let lastDate = new Date(endDate);
 
-    console.log("Start Date:", startDate.toISOString());
-    console.log("End Date:", endDate.toISOString());
-
     // Ensure the loop runs while the current date is on or before the end date
     while (currentDate <= lastDate) {
       // Format the date as 'YYYY-MM-DD'
@@ -140,7 +137,6 @@ function Availability({ eventId, username }) {
       newDateDict[newDateString] = dateDict[key]; // Assign the intervals from the original dateDict
     }
 
-    console.log("Updated Dates Dictionary:", newDateDict);
     return newDateDict;
   }
 
@@ -159,15 +155,6 @@ function Availability({ eventId, username }) {
         const data = await response.json();
         setEventData(data);
         setTimeList(generateTimeList(data.startTime, data.endTime, 1));
-        console.log(
-          "asdfasdfadsfasdfasdf",
-          getDaysBetween(
-            data.startDate,
-            data.endDate,
-            data.startTime,
-            data.endTime
-          )
-        );
         setSlots(
           getDaysBetween(
             data.startDate,
@@ -176,7 +163,6 @@ function Availability({ eventId, username }) {
             data.endTime
           )
         );
-        console.log(`Data for the ${data.name} event is`, data);
       } catch (error) {
         console.error("Error fetching event:", error);
       }

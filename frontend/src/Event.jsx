@@ -27,7 +27,7 @@ function Event() {
     const userName = inputValue.trim();
     setNames((prevNames) => [...prevNames, inputValue]);
     setCurrentUser(userName);
-    console.log("Name submitted:", userName);
+    // console.log("Name submitted:", userName);
     setInputValue("");
     setNameCompleted(true); // Clear input after submission
 
@@ -67,7 +67,7 @@ function Event() {
   }, [uniqueLink]);
 
   const handleLocationSelect = (location) => {
-    console.log("Location selected in Event:", location);
+    // console.log("Location selected in Event:", location);
     setSelectedLocation(location);
   };
 

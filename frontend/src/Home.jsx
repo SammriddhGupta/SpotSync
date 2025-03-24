@@ -61,7 +61,7 @@ function Home() {
       }
 
       const data = await response.json();
-      console.log("Event created:", data);
+      // console.log("Event created:", data);
       // Navigate to the event page using the unique link returned by the backend
       navigate(`/event/${data.uniqueLink}`);
     } catch (error) {

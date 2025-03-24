@@ -23,7 +23,7 @@ const AddPollOption = ({ eventId, selectedLocation, onOptionAdded }) => {
         bounds: selectedLocation.bounds,
       };
 
-      console.log("Sending poll option for eventId:", eventId, locationData);
+      // console.log("Sending poll option for eventId:", eventId, locationData);
       const response = await fetch(
         `https://spotsync-backend.vercel.app/api/events/${eventId}/poll-options`,
         {
@@ -38,7 +38,7 @@ const AddPollOption = ({ eventId, selectedLocation, onOptionAdded }) => {
       }
 
       const data = await response.json();
-      console.log("Poll option added:", data);
+      // console.log("Poll option added:", data);
 
       setPoolAdded(true);
 
